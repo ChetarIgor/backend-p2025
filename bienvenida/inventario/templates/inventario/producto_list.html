@@ -1,0 +1,29 @@
+{% extends 'inventario/base.html' %}
+
+{% block title %}
+Listado productos
+{% endblock %}
+
+{% block header  %}
+<header>
+    <h1>
+        Listado productos
+    </h1>
+</header>
+{% endblock  %}
+
+{% block main %}
+    <ul>
+        {% for producto in object_list %}
+            <li>Nombre: {{ producto.nombre }}</li>
+            <li>Descripcion: {{ producto.descripcion }}</li>
+            <li>Precio: {{ producto.precio }}</li>
+            <li>Stock: {{ producto.stock }}</li>
+            <br>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block footer %}
+    <span>2025 Derechos Reservados.</span>
+{% endblock %}
