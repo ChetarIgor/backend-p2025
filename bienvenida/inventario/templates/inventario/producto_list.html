@@ -5,21 +5,27 @@ Listado productos
 {% endblock %}
 
 {% block header  %}
-<header>
-    <h1>
-        Listado productos
-    </h1>
-</header>
+    <header class="w-full bg-blue-600 text-white p-6 text-xl font-bold">
+        <h1>
+            Listado productos
+        </h1>
+
+        <a href="{%url 'producto_create' %}">
+            Crear nuevo producto
+        </a>
+        
+    </header>
 {% endblock  %}
 
 {% block main %}
-    <ul>
+    <ul class="p-8 bg-gray-300 flex flex-col gap-6">
         {% for producto in object_list %}
-            <li>Nombre: {{ producto.nombre }}</li>
-            <li>Descripcion: {{ producto.descripcion }}</li>
-            <li>Precio: {{ producto.precio }}</li>
-            <li>Stock: {{ producto.stock }}</li>
-            <br>
+            <div class="bg-white border border-gray-400 rounded shadow w-full flex-col gap-2 p-4 hover:bg-blue-300">
+                <li>Nombre: {{ producto.nombre }}</li>
+                <li>Descripcion: {{ producto.descripcion }}</li>
+                <li>Precio: {{ producto.precio }}</li>
+                <li>Stock: {{ producto.stock }}</li>        
+            </div>
         {% endfor %}
     </ul>
 {% endblock %}
@@ -27,3 +33,4 @@ Listado productos
 {% block footer %}
     <span>2025 Derechos Reservados.</span>
 {% endblock %}
+
